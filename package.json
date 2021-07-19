@@ -12,10 +12,10 @@
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
-    "hk-interface": "ssh:git@github.com:fasterthanlight-me/herokey-hk-interface.git",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-pwa": "~4.5.0",
@@ -27,6 +27,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "hk-interface": "ssh:git@github.com:fasterthanlight-me/herokey-hk-interface.git",
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",

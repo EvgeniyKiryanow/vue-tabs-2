@@ -7,11 +7,7 @@
     <TabBody>
       <div class="row">
         <div>
-          <input
-            v-model="mainAllValuesInputs.isShopActive"
-            type="checkbox"
-            id="shop-active"
-          />
+          <input v-model="isShopActive" type="checkbox" id="shop-active" />
           <label for="shop-active">Shop Active</label>
         </div>
       </div>
@@ -19,11 +15,7 @@
       <div class="row">
         <div class="col-4">
           <hk-label required sign="*">Name</hk-label>
-          <hk-input
-            v-model="mainAllValuesInputs.name"
-            name="name-input"
-            id="name-input"
-          />
+          <hk-input v-model="name" name="name-input" id="name-input" />
         </div>
 
         <div class="col-4">
@@ -31,14 +23,14 @@
           <hk-input-date
             value-type="format"
             format="YYYY-MM-DD"
-            v-model="mainAllValuesInputs.eventDate"
+            v-model="eventDate"
           ></hk-input-date>
         </div>
 
         <div class="col-4">
           <hk-label>Default Country</hk-label>
           <hk-select
-            v-model="mainAllValuesInputs.countrySelected"
+            v-model="countrySelected"
             :options="countrySelectList"
             placeholder="FirstCountry"
           />
@@ -51,7 +43,7 @@
           <hk-select
             :options="backgroundTypes"
             placeholder="Fill"
-            v-model="mainAllValuesInputs.backgroundTypeSelected"
+            v-model="backgroundTypeSelected"
           />
         </div>
         <div class="col-4">
@@ -59,7 +51,7 @@
           <hk-select
             :options="shopStyleList"
             placeholder="Black"
-            v-model="mainAllValuesInputs.shopStyleSelected"
+            v-model="shopStyleSelected"
           />
         </div>
         <div class="col-4">
@@ -67,7 +59,7 @@
           <hk-select
             :options="widgetSize"
             placeholder="Sq"
-            v-model="mainAllValuesInputs.widgetSizeSelected"
+            v-model="widgetSizeSelected"
           />
         </div>
       </div>
@@ -76,7 +68,7 @@
         <div>
           <hk-label for="background-color-input">Background color</hk-label>
           <hk-input
-            v-model="mainAllValuesInputs.backgroundColor"
+            v-model="backgroundColor"
             name="background-color-input"
             id="background-color-input"
           />
@@ -87,28 +79,19 @@
         <div class="col-4">
           <div>Banner first banner</div>
           <div>
-            <hk-image-uploader
-              name="banner"
-              v-model="mainAllValuesInputs.banner"
-            />
+            <hk-image-uploader name="banner" v-model="banner" />
           </div>
         </div>
         <div class="col-4">
           <hk-label>Banner second bottom</hk-label>
           <div>
-            <hk-image-uploader
-              name="banner-bottom"
-              v-model="mainAllValuesInputs.bottomBanner"
-            />
+            <hk-image-uploader name="banner-bottom" v-model="bottomBanner" />
           </div>
         </div>
         <div class="col-4">
           <hk-label>Banner third top</hk-label>
           <div>
-            <hk-image-uploader
-              name="banner-top"
-              v-model="mainAllValuesInputs.topBanner"
-            />
+            <hk-image-uploader name="banner-top" v-model="topBanner" />
           </div>
         </div>
       </div>
@@ -117,7 +100,7 @@
         <div>
           <hk-label for="timer-input">Checkout timer (in minutes)</hk-label>
           <hk-input
-            v-model="mainAllValuesInputs.timerInMinutes"
+            v-model="timerInMinutes"
             name="timer-input"
             id="timer-input"
             required
@@ -129,7 +112,7 @@
       <div class="row">
         <div>
           <input
-            v-model="mainAllValuesInputs.isNameInTitleDisplay"
+            v-model="isNameInTitleDisplay"
             type="checkbox"
             id="display-event"
           />
@@ -140,7 +123,7 @@
       <div class="row">
         <div>
           <input
-            v-model="mainAllValuesInputs.isShowConformationPage"
+            v-model="isShowConformationPage"
             type="checkbox"
             id="show-order"
           />
@@ -153,7 +136,7 @@
 <script>
 import TabHeader from "../inner-tab-component/TabHeader";
 import TabBody from "../inner-tab-component/TabBody";
-import { mapGetters } from "vuex";
+import { mapFields } from "vuex-map-fields";
 export default {
   components: {
     TabHeader,
@@ -169,7 +152,22 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["mainAllValuesInputs"]),
+    ...mapFields([
+      "main.isShopActive",
+      "main.name",
+      "main.eventDate",
+      "main.countrySelected",
+      "main.backgroundTypeSelected",
+      "main.shopStyleSelected",
+      "main.widgetSizeSelected",
+      "main.backgroundColor",
+      "main.banner",
+      "main.bottomBanner",
+      "main.topBanner",
+      "main.timerInMinutes",
+      "main.isNameInTitleDisplay",
+      "main.isShowConformationPage",
+    ]),
   },
 };
 </script>

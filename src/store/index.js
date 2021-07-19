@@ -1,36 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { getField, updateField } from "vuex-map-fields";
 Vue.use(Vuex);
-const mainModule = {
-  state: {
-    main: {
-      shopActive: false,
-      name: "",
-      eventDate: "",
-      countrySelected: "",
-      backgroundTypeSelected: "",
-      shopStyleSelected: "",
-      widgetSizeSelected: "",
-      backgroundColor: "",
-      banner: {},
-      bottomBanner: {},
-      topBanner: {},
-      timerInMinutes: 15,
-      isNameInTitleDisplay: false,
-      isShowConformationPage: false,
-    },
-  },
-  mutations: {},
-  actions: {},
-  modules: {},
-  getters: {
-    mainAllValuesInputs: (state) => {
-      return state.main;
-    },
-  },
-};
 
-const seoModule = {
+export default new Vuex.Store({
+  strict: true,
   state: {
     seo: {
       shopDescriptionForGoogle: "",
@@ -44,20 +18,29 @@ const seoModule = {
       descriptionsTwitter: "",
       imageTwitter: {},
     },
-  },
-  mutations: {},
-  actions: {},
-  getters: {
-    seoAllValuesInputs: (state) => {
-      return state.seo;
+    main: {
+      isShopActive: "",
+      name: "",
+      eventDate: "",
+      countrySelected: "",
+      backgroundTypeSelected: "",
+      shopStyleSelected: "",
+      widgetSizeSelected: "",
+      backgroundColor: "",
+      banner: {},
+      bottomBanner: {},
+      topBanner: {},
+      timerInMinutes: "",
+      isNameInTitleDisplay: false,
+      isShowConformationPage: false,
     },
   },
-  modules: {},
-};
-
-export default new Vuex.Store({
-  modules: {
-    main: mainModule,
-    seo: seoModule,
+  mutations: {
+    updateField,
   },
+  actions: {},
+  getters: {
+    getField,
+  },
+  modules: {},
 });
