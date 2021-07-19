@@ -76,6 +76,5 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Karla", sans-serif;
 }
 </style>
