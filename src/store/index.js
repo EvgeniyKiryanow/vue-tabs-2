@@ -20,52 +20,14 @@ const mainModule = {
       isShowConformationPage: false,
     },
   },
-  mutations: {
-    updateShopActive(state, isShopActive) {
-      state.main.shopActive = isShopActive;
-    },
-    updateName(state, name) {
-      state.main.name = name;
-    },
-    updateEventDate(state, date) {
-      state.main.eventDate = date;
-    },
-    updateCountrySelected(state, countrySelected) {
-      state.main.countrySelected = countrySelected;
-    },
-    updateBackgroundTypeSelected(state, backgroundTypeSelected) {
-      state.main.backgroundTypeSelected = backgroundTypeSelected;
-    },
-    updateShopStyleSelected(state, shopStyleSelected) {
-      state.main.shopStyleSelected = shopStyleSelected;
-    },
-    updateWidgetSizeSelected(state, widgetSizeSelected) {
-      state.main.widgetSizeSelected = widgetSizeSelected;
-    },
-    updateBackgroundColor(state, backgroundColor) {
-      state.main.backgroundColor = backgroundColor;
-    },
-    updateBanner(state, banner) {
-      state.main.banner = banner;
-    },
-    updateBottomBanner(state, bottomBanner) {
-      state.main.bottomBanner = bottomBanner;
-    },
-    updateTopBanner(state, topBanner) {
-      state.main.topBanner = topBanner;
-    },
-    updateTimerInMinutes(state, timerInMinutes) {
-      state.main.timerInMinutes = timerInMinutes;
-    },
-    updateIsNameInTitleDisplay(state, isNameInTitleDisplay) {
-      state.main.isNameInTitleDisplay = isNameInTitleDisplay;
-    },
-    updateIsShowConformationPage(state, isShowConformationPage) {
-      state.main.isShowConformationPage = isShowConformationPage;
-    },
-  },
+  mutations: {},
   actions: {},
   modules: {},
+  getters: {
+    mainAllValuesInputs: (state) => {
+      return state.main;
+    },
+  },
 };
 
 const seoModule = {
@@ -85,6 +47,11 @@ const seoModule = {
   },
   mutations: {},
   actions: {},
+  getters: {
+    seoAllValuesInputs: (state) => {
+      return state.seo;
+    },
+  },
   modules: {},
 };
 
